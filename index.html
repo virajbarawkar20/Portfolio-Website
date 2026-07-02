@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Viraj Barawkar — Computer Engineer, AI Enthusiast & Web Developer</title>
+  <meta name="description" content="Viraj Barawkar — Computer Engineering student building at the intersection of Artificial Intelligence, Web Development and public speaking. Founder of SkoolOfAI." />
+  <meta name="keywords" content="Viraj Barawkar, AI, Machine Learning, Web Developer, Portfolio, SkoolOfAI, Computer Engineering" />
+  <meta property="og:title" content="Viraj Barawkar — Portfolio" />
+  <meta property="og:description" content="Computer Engineering Student • AI Enthusiast • Web Developer • Public Speaker" />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#050816" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Inter:wght@300..700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============================= -->
+  <!-- LOADING SCREEN -->
+  <!-- ============================= -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader-inner">
+      <span class="loader-mark">VB</span>
+      <div class="loader-bar"><span class="loader-progress" id="loaderProgress"></span></div>
+    </div>
+  </div>
+
+  <!-- ============================= -->
+  <!-- CURSOR -->
+  <!-- ============================= -->
+  <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+  <!-- ============================= -->
+  <!-- SCROLL PROGRESS -->
+  <!-- ============================= -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- ============================= -->
+  <!-- BACKGROUND ATMOSPHERE -->
+  <!-- ============================= -->
+  <div class="atmosphere" aria-hidden="true">
+    <div class="blob blob-gold"></div>
+    <div class="blob blob-violet"></div>
+    <div class="blob blob-cyan"></div>
+    <canvas id="particles"></canvas>
+    <div class="grain"></div>
+  </div>
+
+  <!-- ============================= -->
+  <!-- NAVIGATION -->
+  <!-- ============================= -->
+  <header class="nav" id="nav">
+    <nav class="nav-inner" aria-label="Primary">
+      <a href="#home" class="nav-logo" aria-label="Viraj Barawkar — home">
+        <span class="logo-mark">V<span class="logo-accent">B</span></span>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link active" data-nav>Home</a></li>
+        <li><a href="#about" class="nav-link" data-nav>About</a></li>
+        <li><a href="#skills" class="nav-link" data-nav>Skills</a></li>
+        <li><a href="#projects" class="nav-link" data-nav>Work</a></li>
+        <li><a href="#journey" class="nav-link" data-nav>Journey</a></li>
+        <li><a href="#awards" class="nav-link" data-nav>Awards</a></li>
+        <li><a href="#services" class="nav-link" data-nav>Services</a></li>
+        <li><a href="#contact" class="nav-link" data-nav>Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme" aria-pressed="false">
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <a href="#contact" class="btn btn-small btn-primary magnetic" data-magnetic>Let's Talk</a>
+        <button class="nav-burger" id="navBurger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="mainContent">
+
+    <!-- ============================= -->
+    <!-- HERO -->
+    <!-- ============================= -->
+    <section class="hero" id="home">
+      <div class="hero-inner">
+        <p class="hero-eyebrow reveal" data-reveal>
+          <span class="eyebrow-dot"></span> Available for select projects &mdash; Pune, India
+        </p>
+
+        <h1 class="hero-title reveal" data-reveal>
+          <span class="hero-greeting">Hi, I'm</span>
+          <span class="hero-name">Viraj Barawkar</span>
+        </h1>
+
+        <div class="hero-role reveal" data-reveal>
+          <span class="role-static">I build with</span>
+          <span class="role-typed" id="typedRole" aria-live="polite"></span><span class="role-cursor">|</span>
+        </div>
+
+        <p class="hero-desc reveal" data-reveal>
+          Computer Engineering student engineering thoughtful software and speaking on stages
+          about what AI means for the next decade &mdash; then going home to build it.
+        </p>
+
+        <div class="hero-actions reveal" data-reveal>
+          <a href="#projects" class="btn btn-primary magnetic" data-magnetic>
+            <span>View Projects</span>
+          </a>
+          <a href="/resume.pdf" class="btn btn-ghost magnetic" data-magnetic download>
+            <span>Download Resume</span>
+          </a>
+          <a href="#contact" class="btn btn-outline magnetic" data-magnetic>
+            <span>Hire Me</span>
+          </a>
+        </div>
+
+        <div class="hero-stats reveal" data-reveal>
+          <div class="hero-stat">
+            <span class="hero-stat-num" data-count="20">0</span><span class="hero-stat-plus">+</span>
+            <span class="hero-stat-label">Talks Delivered</span>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <span class="hero-stat-num" data-count="15">0</span><span class="hero-stat-plus">+</span>
+            <span class="hero-stat-label">Projects Shipped</span>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <span class="hero-stat-num" data-count="1">0</span>
+            <span class="hero-stat-label">Founding Venture</span>
+          </div>
+        </div>
+      </div>
+
+      <a href="#about" class="scroll-cue" aria-label="Scroll to about section">
+        <span class="scroll-cue-track"><span class="scroll-cue-dot"></span></span>
+        <span class="scroll-cue-text">Scroll</span>
+      </a>
+    </section>
+
+    <!-- ============================= -->
+    <!-- ABOUT -->
+    <!-- ============================= -->
+    <section class="about" id="about">
+      <div class="section-inner">
+        <div class="section-head reveal" data-reveal>
+          <span class="section-tag">01 &mdash; About</span>
+          <h2 class="section-title">Engineer by training, <span class="text-gradient">communicator</span> by instinct.</h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-copy reveal" data-reveal>
+            <p>
+              I'm Viraj, a Computer Engineering diploma graduate now reading for a bachelor's
+              in Computer Science. My work sits at the crossing of
+              <strong>Artificial Intelligence</strong>, <strong>Machine Learning</strong> and
+              <strong>full-stack web development</strong> &mdash; I like problems that are equal
+              parts engineering and judgment.
+            </p>
+            <p>
+              Off the keyboard, I'm a trained public speaker and debater. I've stood on
+              competitive stages arguing both sides of hard questions, and I bring that same
+              habit of building the counter-argument into every piece of software I ship.
+            </p>
+            <p>
+              I interned at <strong>Interface IT Solution</strong>, where I taught coding to
+              students and ran the studio's social presence &mdash; a rare mix of classroom and
+              client-facing work that shaped how I explain technical ideas simply. That teaching
+              instinct is now the seed of <strong>SkoolOfAI</strong>, an educational initiative
+              I'm growing to make AI genuinely learnable.
+            </p>
+
+            <div class="about-tags">
+              <span class="tag">AI &amp; ML</span>
+              <span class="tag">Full-Stack Development</span>
+              <span class="tag">Python</span>
+              <span class="tag">Public Speaking</span>
+              <span class="tag">Leadership</span>
+            </div>
+          </div>
+
+          <div class="about-visual reveal" data-reveal>
+            <div class="about-card glass">
+              <div class="about-card-glow"></div>
+              <div class="about-card-avatar" role="img" aria-label="Portrait placeholder for Viraj Barawkar">VB</div>
+              <div class="about-card-row">
+                <span class="about-card-label">Based in</span>
+                <span class="about-card-value">India</span>
+              </div>
+              <div class="about-card-row">
+                <span class="about-card-label">Focus</span>
+                <span class="about-card-value">AI &middot; Web &middot; Speaking</span>
+              </div>
+              <div class="about-card-row">
+                <span class="about-card-label">Founder of</span>
+                <span class="about-card-value">SkoolOfAI</span>
+              </div>
+              <div class="about-card-row">
+                <span class="about-card-label">Status</span>
+                <span class="about-card-value status-live"><span class="live-dot"></span>Open to work</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= -->
+    <!-- SKILLS -->
+    <!-- ============================= -->
+    <section class="skills" id="skills">
+      <div class="section-inner">
+        <div class="section-head reveal" data-reveal>
+          <span class="section-tag">02 &mdash; Skills</span>
+          <h2 class="section-title">A stack built for <span class="text-gradient">learning fast.</span></h2>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill-card glass reveal" data-reveal>
+            <h3 class="skill-card-title">Programming</h3>
+            <ul class="skill-bars">
+              <li class="skill-bar"><span class="skill-bar-name">C++</span><span class="skill-bar-track"><span class="skill-bar-fill" data-level="80"></span></span></li>
+              <li class="skill-bar"><span class="skill-bar-name">C</span><span class="skill-bar-track"><span class="skill-bar-fill" data-level="78"></span></span></li>
+              <li class="skill-bar"><span class="skill-bar-name">JavaScript</span><span class="skill-bar-track"><span class="skill-bar-fill" data-level="82"></span></span></li>
+              <li class="skill-bar"><span class="skill-bar-name">HTML &amp; CSS</span><span class="skill-bar-track"><span class="skill-bar-fill" data-level="90"></span></span></li>
+              <li class="skill-bar"><span class="skill-bar-name">Python <em>(learning)</em></span><span class="skill-bar-track"><span class="skill-bar-fill" data-level="60"></span></span></li>
+            </ul>
+          </div>
+
+          <div class="skill-card glass reveal" data-reveal>
+            <h3 class="skill-card-title">AI &amp; Tech</h3>
+            <ul class="skill-bars">
+              <li class="skill-bar"><span class="skill-bar-name">Artificial Intelligence</span><span class="skill-bar-track"><span class="skill-bar-fill" data-level="75"></span></span></li>
+              <li class="skill-bar"><span class="skill-bar-name">Machine Learning</span><span class="skill-bar-track"><span class="skill-bar-fill" data-level="70"></span></span></li>
+              <li class="skill-bar"><span class="skill-bar-name">Prompt Engineering</span><span class="skill-bar-track"><span class="skill-bar-fill" data-level="85"></span></span></li>
+              <li class="skill-bar"><span class="skill-bar-name">Web Development</span><span class="skill-bar-track"><span class="skill-bar-fill" data-level="88"></span></span></li>
+            </ul>
+          </div>
+
+          <div class="skill-card glass reveal" data-reveal>
+            <h3 class="skill-card-title">Tools</h3>
+            <div class="skill-pills">
+              <span class="pill">Git</span>
+              <span class="pill">GitHub</span>
+              <span class="pill">VS Code</span>
+              <span class="pill">Figma</span>
+              <span class="pill">Canva</span>
+            </div>
+            <h3 class="skill-card-title skill-card-title-spaced">Soft Skills</h3>
+            <div class="skill-pills">
+              <span class="pill pill-accent">Leadership</span>
+              <span class="pill pill-accent">Public Speaking</span>
+              <span class="pill pill-accent">Debating</span>
+              <span class="pill pill-accent">Teaching</span>
+              <span class="pill pill-accent">Critical Thinking</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= -->
+    <!-- PROJECTS -->
+    <!-- ============================= -->
+    <section class="projects" id="projects">
+      <div class="section-inner">
+        <div class="section-head reveal" data-reveal>
+          <span class="section-tag">03 &mdash; Selected Work</span>
+          <h2 class="section-title">Things I've <span class="text-gradient">built &amp; shipped.</span></h2>
+        </div>
+
+        <div class="project-filters reveal" data-reveal role="tablist" aria-label="Filter projects">
+          <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+          <button class="filter-btn" data-filter="ai" role="tab" aria-selected="false">AI / ML</button>
+          <button class="filter-btn" data-filter="web" role="tab" aria-selected="false">Web</button>
+          <button class="filter-btn" data-filter="government" role="tab" aria-selected="false">Government</button>
+          <button class="filter-btn" data-filter="wellness" role="tab" aria-selected="false">Wellness</button>
+          <button class="filter-btn" data-filter="education" role="tab" aria-selected="false">Education</button>
+        </div>
+
+        <div class="project-grid" id="projectGrid">
+
+          <article class="project-card glass reveal" data-reveal data-category="ai">
+            <div class="project-media">
+              <div class="project-placeholder ph-ai" role="img" aria-label="Placeholder graphic for Breast Cancer Detection project">
+                <svg viewBox="0 0 64 64" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="32" cy="32" r="20"/><path d="M32 20v24M20 32h24"/></svg>
+              </div>
+              <span class="project-status">In Development</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Breast Cancer Detection using Machine Learning</h3>
+              <p class="project-desc">A deep-learning pipeline that screens mammogram images to flag early indicators of breast cancer, aimed at supporting &mdash; not replacing &mdash; clinical review.</p>
+              <div class="project-tech">
+                <span class="tech-chip">Python</span>
+                <span class="tech-chip">Machine Learning</span>
+                <span class="tech-chip">Computer Vision</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card glass reveal" data-reveal data-category="education">
+            <div class="project-media">
+              <div class="project-placeholder ph-edu" role="img" aria-label="Placeholder graphic for SkoolOfAI">
+                <svg viewBox="0 0 64 64" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 24l24-12 24 12-24 12z"/><path d="M16 28v12c0 4 8 8 16 8s16-4 16-8V28"/></svg>
+              </div>
+              <span class="project-status project-status-live">Growing</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">SkoolOfAI</h3>
+              <p class="project-desc">An educational initiative making AI genuinely learnable &mdash; practical resources, guided projects and a teaching style built from real classroom experience.</p>
+              <div class="project-tech">
+                <span class="tech-chip">Education</span>
+                <span class="tech-chip">AI Literacy</span>
+                <span class="tech-chip">Curriculum</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card glass reveal" data-reveal data-category="web">
+            <div class="project-media">
+              <div class="project-placeholder ph-web" role="img" aria-label="Placeholder graphic for portfolio website">
+                <svg viewBox="0 0 64 64" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="8" y="12" width="48" height="40" rx="4"/><path d="M8 22h48"/></svg>
+              </div>
+              <span class="project-status">Live</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Professional Portfolio Website</h3>
+              <p class="project-desc">This site &mdash; a premium personal portfolio built to present projects, skills and achievements with a modern, motion-led interface.</p>
+              <div class="project-tech">
+                <span class="tech-chip">HTML</span>
+                <span class="tech-chip">CSS</span>
+                <span class="tech-chip">JavaScript</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card glass reveal" data-reveal data-category="web">
+            <div class="project-media">
+              <div class="project-placeholder ph-portal" role="img" aria-label="Placeholder graphic for PBAS Portal">
+                <svg viewBox="0 0 64 64" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="10" y="8" width="44" height="48" rx="3"/><path d="M18 20h28M18 30h28M18 40h16"/></svg>
+              </div>
+              <span class="project-status">Institutional</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">PBAS Portal</h3>
+              <p class="project-desc">A custom-designed institutional portal with a clean, professional interface built for daily use by faculty and staff.</p>
+              <div class="project-tech">
+                <span class="tech-chip">Web Development</span>
+                <span class="tech-chip">UI/UX</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card glass reveal" data-reveal data-category="wellness">
+            <div class="project-media">
+              <div class="project-placeholder ph-counsel" role="img" aria-label="Placeholder graphic for Asmita Hypnotherapy and Counselling Center">
+                <span class="project-emoji">🧠</span>
+              </div>
+              <span class="project-status project-status-live">Live</span>
+            </div>
+            <div class="project-body">
+              <span class="project-kicker">Counselling Website</span>
+              <h3 class="project-title">Asmita Hypnotherapy &amp; Counselling Center</h3>
+              <p class="project-desc">A modern, responsive website showcasing professional counselling services, expertise, achievements and client-focused solutions with a clean, user-friendly interface.</p>
+              <div class="project-tech">
+                <span class="tech-chip">Web Design</span>
+                <span class="tech-chip">Responsive</span>
+                <span class="tech-chip">Client Website</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card glass reveal" data-reveal data-category="government">
+            <div class="project-media">
+              <div class="project-placeholder ph-gov" role="img" aria-label="Placeholder graphic for Grampanchayat Jogwadi website">
+                <span class="project-emoji">🏛️</span>
+              </div>
+              <span class="project-status project-status-live">Live</span>
+            </div>
+            <div class="project-body">
+              <span class="project-kicker">Government Website</span>
+              <h3 class="project-title">Grampanchayat Jogwadi</h3>
+              <p class="project-desc">Official village administration website featuring public notices, government schemes, development projects and citizen information.</p>
+              <div class="project-tech">
+                <span class="tech-chip">Government</span>
+                <span class="tech-chip">Public Services</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card glass reveal" data-reveal data-category="government">
+            <div class="project-media">
+              <div class="project-placeholder ph-gov" role="img" aria-label="Placeholder graphic for Grampanchayat Gunwadi website">
+                <span class="project-emoji">🏛️</span>
+              </div>
+              <span class="project-status project-status-live">Live</span>
+            </div>
+            <div class="project-body">
+              <span class="project-kicker">Government Website</span>
+              <h3 class="project-title">Grampanchayat Gunwadi</h3>
+              <p class="project-desc">Official village administration website built to give residents easy access to local governance and public information.</p>
+              <div class="project-tech">
+                <span class="tech-chip">Government</span>
+                <span class="tech-chip">Public Services</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card glass reveal" data-reveal data-category="government">
+            <div class="project-media">
+              <div class="project-placeholder ph-gov" role="img" aria-label="Placeholder graphic for Grampanchayat Malad website">
+                <span class="project-emoji">🏛️</span>
+              </div>
+              <span class="project-status project-status-live">Live</span>
+            </div>
+            <div class="project-body">
+              <span class="project-kicker">Government Website</span>
+              <h3 class="project-title">Grampanchayat Malad</h3>
+              <p class="project-desc">Modern website providing easy access to village notices, governance information, public services and development initiatives.</p>
+              <div class="project-tech">
+                <span class="tech-chip">Government</span>
+                <span class="tech-chip">Public Services</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card glass reveal" data-reveal data-category="government">
+            <div class="project-media">
+              <div class="project-placeholder ph-gov" role="img" aria-label="Placeholder graphic for Grampanchayat Bhilarwadi website">
+                <span class="project-emoji">🏛️</span>
+              </div>
+              <span class="project-status project-status-live">Live</span>
+            </div>
+            <div class="project-body">
+              <span class="project-kicker">Government Website</span>
+              <h3 class="project-title">Grampanchayat Bhilarwadi</h3>
+              <p class="project-desc">Informative village portal showcasing administration, citizen services, government schemes and development activities.</p>
+              <div class="project-tech">
+                <span class="tech-chip">Government</span>
+                <span class="tech-chip">Public Services</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card project-card-more glass reveal" data-reveal data-category="more">
+            <div class="project-more-inner">
+              <span class="project-more-icon">🚀</span>
+              <span class="project-more-count">12+ Projects</span>
+              <h3 class="project-title">+7 More Websites</h3>
+              <p class="project-desc">Including Grampanchayat Karhawagaj, Waki, Hol, Masalwadi, Ambi BK, Ambi Khurd, Nirawagaj, and additional custom web solutions delivered across government and private sectors.</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= -->
+    <!-- ACHIEVEMENTS -->
+    <!-- ============================= -->
+    <section class="achievements">
+      <div class="section-inner">
+        <div class="achievement-grid">
+          <div class="achievement-card reveal" data-reveal>
+            <span class="achievement-num" data-count="20">0</span><span class="achievement-plus">+</span>
+            <span class="achievement-label">Presentations &amp; Talks</span>
+          </div>
+          <div class="achievement-card reveal" data-reveal>
+            <span class="achievement-num" data-count="15">0</span><span class="achievement-plus">+</span>
+            <span class="achievement-label">Projects Completed</span>
+          </div>
+          <div class="achievement-card reveal" data-reveal>
+            <span class="achievement-num" data-count="100">0</span><span class="achievement-plus">+</span>
+            <span class="achievement-label">Hours Learning AI</span>
+          </div>
+          <div class="achievement-card reveal" data-reveal>
+            <span class="achievement-num" data-count="1">0</span>
+            <span class="achievement-label">Industry Internship</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= -->
+    <!-- TIMELINE / JOURNEY -->
+    <!-- ============================= -->
+    <section class="journey" id="journey">
+      <div class="section-inner">
+        <div class="section-head reveal" data-reveal>
+          <span class="section-tag">04 &mdash; Journey</span>
+          <h2 class="section-title">How I got <span class="text-gradient">here.</span></h2>
+        </div>
+
+        <ol class="timeline">
+          <li class="timeline-item reveal" data-reveal>
+            <div class="timeline-dot"></div>
+            <div class="timeline-content glass">
+              <span class="timeline-date">Current</span>
+              <h3 class="timeline-title">Bachelor's in Computer Science</h3>
+              <p class="timeline-desc">Continuing on from my diploma to deepen my foundation in computer science, with a focus on AI and systems thinking.</p>
+            </div>
+          </li>
+          <li class="timeline-item reveal" data-reveal>
+            <div class="timeline-dot"></div>
+            <div class="timeline-content glass">
+              <span class="timeline-date">Internship</span>
+              <h3 class="timeline-title">Interface IT Solution</h3>
+              <p class="timeline-desc">Taught coding to students, managed the studio's social media presence, and picked up how to explain technical ideas to non-technical audiences.</p>
+            </div>
+          </li>
+          <li class="timeline-item reveal" data-reveal>
+            <div class="timeline-dot"></div>
+            <div class="timeline-content glass">
+              <span class="timeline-date">Building</span>
+              <h3 class="timeline-title">AI Projects &amp; SkoolOfAI</h3>
+              <p class="timeline-desc">Started shipping applied AI projects and growing SkoolOfAI, turning what I was learning into resources other students could use.</p>
+            </div>
+          </li>
+          <li class="timeline-item reveal" data-reveal>
+            <div class="timeline-dot"></div>
+            <div class="timeline-content glass">
+              <span class="timeline-date">Foundation</span>
+              <h3 class="timeline-title">Diploma in Computer Engineering</h3>
+              <p class="timeline-desc">Built my engineering foundation while getting deeply involved in public speaking, debate and student leadership.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============================= -->
+    <!-- AWARDS & ACHIEVEMENTS -->
+    <!-- Placeholder cards — swap in real awards, certificates and wins -->
+    <!-- ============================= -->
+    <section class="awards" id="awards">
+      <div class="section-inner">
+        <div class="section-head reveal" data-reveal>
+          <span class="section-tag">05 &mdash; Recognition</span>
+          <h2 class="section-title">Awards &amp; <span class="text-gradient">achievements.</span></h2>
+        </div>
+
+        <div class="award-grid">
+          <div class="award-card award-card-placeholder glass reveal" data-reveal>
+            <span class="award-icon">🏆</span>
+            <span class="award-title-placeholder">Add achievement title</span>
+            <span class="award-desc-placeholder">Short description of the award, competition or recognition.</span>
+            <span class="award-year-placeholder">Year</span>
+          </div>
+          <div class="award-card award-card-placeholder glass reveal" data-reveal>
+            <span class="award-icon">🏆</span>
+            <span class="award-title-placeholder">Add achievement title</span>
+            <span class="award-desc-placeholder">Short description of the award, competition or recognition.</span>
+            <span class="award-year-placeholder">Year</span>
+          </div>
+          <div class="award-card award-card-placeholder glass reveal" data-reveal>
+            <span class="award-icon">🏆</span>
+            <span class="award-title-placeholder">Add achievement title</span>
+            <span class="award-desc-placeholder">Short description of the award, competition or recognition.</span>
+            <span class="award-year-placeholder">Year</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= -->
+    <!-- SERVICES -->
+    <!-- ============================= -->
+    <section class="services" id="services">
+      <div class="section-inner">
+        <div class="section-head reveal" data-reveal>
+          <span class="section-tag">06 &mdash; Services</span>
+          <h2 class="section-title">What I can <span class="text-gradient">do for you.</span></h2>
+        </div>
+
+        <div class="service-grid">
+          <div class="service-card glass reveal" data-reveal>
+            <div class="service-icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a7 7 0 0 0-4 12.7V17a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-2.3A7 7 0 0 0 12 2z"/><path d="M10 22h4"/></svg></div>
+            <h3 class="service-title">AI Solutions</h3>
+            <p class="service-desc">Applied machine-learning tools scoped to a real problem, not a demo &mdash; from data to a working prototype.</p>
+          </div>
+          <div class="service-card glass reveal" data-reveal>
+            <div class="service-icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 3 4 7l4 4M16 3l4 4-4 4M14 3l-4 18"/></svg></div>
+            <h3 class="service-title">Web Development</h3>
+            <p class="service-desc">Fast, accessible, responsive websites built with clean semantic code and no unnecessary dependencies.</p>
+          </div>
+          <div class="service-card glass reveal" data-reveal>
+            <div class="service-icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
+            <h3 class="service-title">Frontend Design</h3>
+            <p class="service-desc">Interfaces with intent &mdash; considered type, motion and spacing that make a product feel premium.</p>
+          </div>
+          <div class="service-card glass reveal" data-reveal>
+            <div class="service-icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+            <h3 class="service-title">Portfolio Websites</h3>
+            <p class="service-desc">A personal site that actually gets you noticed &mdash; built around your work, not a template.</p>
+          </div>
+          <div class="service-card glass reveal" data-reveal>
+            <div class="service-icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+            <h3 class="service-title">Teaching Programming</h3>
+            <p class="service-desc">Structured, patient coding instruction &mdash; drawn from real classroom teaching, not a script.</p>
+          </div>
+          <div class="service-card glass reveal" data-reveal>
+            <div class="service-icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+            <h3 class="service-title">Prompt Engineering</h3>
+            <p class="service-desc">Getting reliable, high-quality output from AI models through carefully designed prompts and workflows.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= -->
+    <!-- TESTIMONIALS -->
+    <!-- ============================= -->
+    <section class="testimonials" id="testimonials">
+      <div class="section-inner">
+        <div class="section-head reveal" data-reveal>
+          <span class="section-tag">07 &mdash; Testimonials</span>
+          <h2 class="section-title">What people <span class="text-gradient">say.</span></h2>
+        </div>
+
+        <div class="testimonial-track reveal" data-reveal>
+          <div class="testimonial-card glass">
+            <p class="testimonial-quote">"Viraj taught our coding batch at Interface IT Solution and had a rare gift for making beginners comfortable with hard ideas. Genuinely patient and prepared."</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">RS</div>
+              <div>
+                <span class="testimonial-name">Rohan Sharma</span>
+                <span class="testimonial-role">Student, Interface IT Solution</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card glass">
+            <p class="testimonial-quote">"His debate prep is unusually structured &mdash; he builds the opposing case before his own. That discipline shows up in how he approaches technical problems too."</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">AP</div>
+              <div>
+                <span class="testimonial-name">Anjali Patil</span>
+                <span class="testimonial-role">Debate Society Coordinator</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card glass">
+            <p class="testimonial-quote">"We brought Viraj in to speak on AI to a mixed audience of students and faculty. Clear, confident, and refreshingly honest about the limits of the technology."</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">SK</div>
+              <div>
+                <span class="testimonial-name">Sandeep Kulkarni</span>
+                <span class="testimonial-role">Event Organizer</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= -->
+    <!-- CONTACT -->
+    <!-- ============================= -->
+    <section class="contact" id="contact">
+      <div class="section-inner">
+        <div class="contact-panel glass reveal" data-reveal>
+          <div class="contact-left">
+            <span class="section-tag">08 &mdash; Contact</span>
+            <h2 class="section-title">Let's build something <span class="text-gradient">worth shipping.</span></h2>
+            <p class="contact-desc">Open to freelance web projects, AI collaborations, and speaking invitations. I usually reply within a day or two.</p>
+
+            <ul class="contact-list">
+              <li>
+                <span class="contact-label">Email</span>
+                <a href="mailto:hello@virajbarawkar.dev" class="contact-value">hello@virajbarawkar.dev</a>
+              </li>
+              <li>
+                <span class="contact-label">Location</span>
+                <span class="contact-value">India</span>
+              </li>
+            </ul>
+
+            <div class="social-links">
+              <a href="https://github.com/" class="social-link magnetic" data-magnetic aria-label="GitHub" target="_blank" rel="noopener">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.1 3.29 9.4 7.86 10.94.57.1.78-.25.78-.55v-2.15c-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.71.08-.71 1.17.08 1.78 1.2 1.78 1.2 1.03 1.76 2.71 1.25 3.37.96.1-.75.4-1.25.73-1.54-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.24 2.76.12 3.05.74.81 1.18 1.83 1.18 3.09 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.07.78 2.16v3.2c0 .31.21.66.79.55A10.52 10.52 0 0 0 23.5 12c0-6.27-5.23-11.5-11.5-11.5z"/></svg>
+              </a>
+              <a href="https://linkedin.com/" class="social-link magnetic" data-magnetic aria-label="LinkedIn" target="_blank" rel="noopener">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.47zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56z"/></svg>
+              </a>
+              <a href="https://instagram.com/" class="social-link magnetic" data-magnetic aria-label="Instagram" target="_blank" rel="noopener">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="form-row">
+              <label class="form-label" for="name">Name</label>
+              <input class="form-input" type="text" id="name" name="name" placeholder="Your name" required />
+            </div>
+            <div class="form-row">
+              <label class="form-label" for="email">Email</label>
+              <input class="form-input" type="email" id="email" name="email" placeholder="you@example.com" required />
+            </div>
+            <div class="form-row">
+              <label class="form-label" for="message">Message</label>
+              <textarea class="form-input" id="message" name="message" rows="4" placeholder="Tell me about your project" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full magnetic" data-magnetic>
+              <span id="submitLabel">Send Message</span>
+            </button>
+            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================= -->
+  <!-- FOOTER -->
+  <!-- ============================= -->
+  <footer class="footer">
+    <div class="section-inner footer-inner">
+      <div class="footer-brand">
+        <span class="logo-mark">V<span class="logo-accent">B</span></span>
+        <p class="footer-tagline">Building at the edge of AI, the web, and the stage.</p>
+      </div>
+
+      <div class="footer-links">
+        <div class="footer-col">
+          <span class="footer-col-title">Site</span>
+          <a href="#about">About</a>
+          <a href="#projects">Work</a>
+          <a href="#services">Services</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">Elsewhere</span>
+          <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+    </div>
+    <div class="section-inner footer-bottom">
+      <span>&copy; <span id="year"></span> Viraj Barawkar. All rights reserved.</span>
+      <span>Designed &amp; built from scratch.</span>
+    </div>
+  </footer>
+
+  <!-- ============================= -->
+  <!-- BACK TO TOP -->
+  <!-- ============================= -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
